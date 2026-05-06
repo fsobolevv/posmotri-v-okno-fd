@@ -11,6 +11,8 @@ html {
 .page {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -26,8 +28,10 @@ html {
   align-items: flex-end;
   width: 1140px;
   gap: 30px;
-  margin-bottom: 133px;
-  margin-top: 133px;
+  margin-bottom: 333px;
+  margin-top: 333px;
+  margin-left: 390px;
+  margin-right: 390px;
 }
 
 .result {
