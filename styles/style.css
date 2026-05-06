@@ -8,6 +8,25 @@ html {
   block-size: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
 .page {
   display: flex;
   flex-direction: row;
@@ -28,31 +47,27 @@ html {
   align-items: flex-end;
   width: 1140px;
   gap: 30px;
-  margin-bottom: 333px;
-  margin-top: 333px;
-  margin-left: 390px;
-  margin-right: 390px;
+  
 }
 
 .result {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  /* margin-bottom: 133px;
-  margin-top: 133px; */
+
 }
 
 .content__details {
   display: flex;
   flex-direction: column;
   flex: 1;
-  /* margin-bottom: 133px;
-  margin-top: 133px; */
+ 
 }
 
 .result__video-container {
   position: relative;
   width: 711px;
+  height: 386px;
   margin-bottom: 16px;
 }
 
@@ -74,19 +89,15 @@ html {
   display: flex;
   align-items: center;
   flex: none;
+  cursor: pointer;
+}
+
+.search-form__fieldset:first-child .search-form__label {
+  text-decoration: none;
 }
 
 .search-form__label:hover {
-  width: fit-content;
   text-decoration: underline;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  flex: none;
-}
-
-.search-form__label_city:hover {
-  text-decoration: none;
 }
 
 .search-form__pseudo-checkbox {
@@ -112,12 +123,13 @@ html {
 
 .search-form__textfield {
   min-width: 225px;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-weight: 400;
   font-size: 18px;
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   border-right: none;
+  border-left: none;
   background-color: inherit;
   color: white;
   appearance: none;
@@ -150,7 +162,7 @@ html {
 }
 
 .search-form__fieldset-title {
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 100%;
@@ -159,77 +171,45 @@ html {
 }
 
 .button {
+  display: flex;
   color: white;
   border: solid 1px white;
   background: transparent;
-  font-family:
-    Fira Sans Condensed,
-    sans-serif;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  height: 34px;
   font-size: 18px;
-  font-weight: 700px;
+  font-weight: 700;
   line-height: 100%;
+  cursor: pointer;
 }
 
 .button:hover {
-  color: white;
-  cursor: pointer;
   text-decoration: underline;
-  border: solid 1px white;
-  background: transparent;
-  font-family:
-    Fira Sans Condensed,
-    sans-serif;
-  font-size: 18px;
-  font-weight: 700px;
-  line-height: 100%;
 }
 
 .button:active {
-  color: white;
-  cursor: pointer;
-  border: solid 1px white;
   text-decoration: none;
   background-color: rgba(84, 80, 80, 1);
-  font-family:
-    Fira Sans Condensed,
-    sans-serif;
-  font-size: 18px;
-  font-weight: 700px;
-  line-height: 100%;
 }
 
 .button:focus-visible {
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
   border: 1px solid #fff;
   outline: 1px solid #fff;
   outline-offset: 2px;
-  background: transparent;
-  font-family:
-    Fira Sans Condensed,
-    sans-serif;
-  font-size: 18px;
-  font-weight: 700px;
-  line-height: 100%;
 }
 
 .search-form__submit-button {
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 194px;
-  height: 34px;
-  padding: 0px;
+  padding: 0;
   margin-top: 20px;
 }
 
 .more-button {
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 390px;
-  min-height: 34px;
   margin-top: 30px;
   margin-bottom: 2px;
 }
@@ -237,6 +217,19 @@ html {
 .content__card-link {
   display: block;
   color: white;
+  text-decoration: none;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link.button:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__card-link:active {
+  background-color: rgba(84, 80, 80, 1);
   text-decoration: none;
 }
 
@@ -271,8 +264,8 @@ html {
   line-height: 16.2px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  line-clamp: 3;
-  -webkit-line-clamp: 3;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -282,22 +275,6 @@ html {
   justify-content: space-between;
   align-items: flex-start;
   width: 390px;
-}
-
-.content__video-card:hover {
-  display: flex;
-  text-decoration: underline;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 390px;
-}
-
-.content__video-card:active {
-  background-color: rgba(84, 80, 80, 1);
-}
-
-.content__video-card:focus-visible {
-  outline: 1px solid #fff;
 }
 
 .content__video-card-thumbnail {
@@ -320,25 +297,6 @@ html {
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
-}
-
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-ol {
-  list-style: none;
 }
 
 /* Кастомный скроллбар */
